@@ -1,19 +1,34 @@
-# Understanding the Effects of Datasets Characteristics on Offline Reinforcement Learning
-_Kajetan Schweighofer<sup>1</sup>,
+# A Dataset Perspective on Offline Reinforcement Learning
+_Kajetan Schweighofer<sup>#,1</sup>,
+Andreas Radler<sup>#,1</sup>,
+Marius-Constantin Dinu<sup>#,1,3</sup>,
 Markus Hofmarcher<sup>1</sup>,
-Marius-Constantin Dinu<sup>1,3</sup>,
-Philipp Renz<sup>1</sup>,
-Angela Bitto-Nemling<sup>1</sup>,
 Vihang Patil<sup>1</sup>,
-Sepp Hochreiter<sup>1, 2</sup>_
+Angela Bitto-Nemling<sup>1,2</sup>,
+Hamid Eghbal-zadeh<sup>1</sup>,
+Sepp Hochreiter<sup>1,2</sup>_
 
 <sup>1</sup> ELLIS Unit Linz and LIT AI Lab, Institute for Machine Learning, Johannes Kepler University Linz, Austria  
 <sup>2</sup> Institute of Advanced Research in Artificial Intelligence (IARAI)  
-<sup>3</sup> Dynatrace Research
+<sup>3</sup> Dynatrace Research  
+<sup>#</sup> Authors contributed equal
 
 ---
 
-The paper is available on [arxiv](https://arxiv.org/abs/2111.04714)
+The paper is available on [arxiv](https://arxiv.org/abs/2111.04714) and got accepted to [CoLLAs 2022](https://lifelong-ml.cc/).
+
+We recommend the following citation:
+
+```
+@inproceedings{schweighofer2022dataset,
+  title={A Dataset Perspective on Offline Reinforcement Learning},
+  author={Schweighofer, Kajetan and Radler, Andreas and Dinu, Marius-Constantin and Hofmarcher, Markus and Patil, Vihang Prakash and Bitto-Nemling, Angela and Eghbal-zadeh, Hamid and Hochreiter, Sepp},
+  booktitle={Conference on Lifelong Learning Agents},
+  pages={470--517},
+  year={2022},
+  organization={PMLR}
+}
+```
 
 ---
 
@@ -70,6 +85,9 @@ or using the first dataset creation run on the replay dataset
 ```shell script
 python ex_XX.py --run 0 --dataset 2
 ```
+
+Note that experiments 01 - 06 are the main experiments and 101-106 are the additional experiments regarding isomorphic and homomorphic transformations and domain shifts.
+
 ## Results
 After all experiments are concluded, one has to combine the logged files and create the plots by executing
 
@@ -89,6 +107,17 @@ Alternative visualisations of the main results, using parallel coordinates are a
 ```shell script
 python source/plotting/parallel_coordinates.py
 ```
+
+The additional experiments regarding domain shifts can be directly plotted by executing
+
+```shell script
+python source/plotting/plot_ablations.py
+```
+
+Plotting the Fig. 2 in the paper is done through [this](https://github.com/kschweig/OfflineRL/blob/master/source/plotting/occupancy.ipynb) notebook.
+
+## D4RL results
+Code reproducing our results on [D4RL](https://github.com/rail-berkeley/d4rl) are found in [this](https://github.com/kschweig/OfflineRL/blob/master/d4rl_results/evaluate.ipynb) notebook in the folder 'd4rl_results'.
 
 ## LICENSE
 MIT LICENSE

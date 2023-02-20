@@ -11,6 +11,10 @@ from ..networks.actor import Actor
 
 
 class BCQ(Agent):
+    """
+    Re-implementation of the original author implementation found at
+    https://github.com/sfujim/BCQ/blob/master/discrete_BCQ/discrete_BCQ.py
+    """
 
     def __init__(self,
                  obs_space,
